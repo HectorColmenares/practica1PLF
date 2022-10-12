@@ -41,7 +41,7 @@ even2Digit x
 
 --ej7
 isPrimeNumber :: Int -> Bool
-isPrimeNumber x= elem x[2,3,5,7,11,13,17,19]
+isPrimeNumber x= elem x[1,2,3,5,7,11,13,17]
 
 
 --ej8
@@ -61,9 +61,25 @@ equal2digits x
  |x<10 = False
  |x <=99 = div x 10 == mod x 10
 
+
+ --ej11
+higher:: Int->Int->Int->Int
+higher a b c 
+    | a>b && a>c = a
+    | b>a && b>c = b
+    | c>a && c>b = c
+
     --ej12
 suma ::(Integral a)=> a ->a ->Bool
 suma a b = even (a+b)
+
+
+--ej13
+sum2Digit2Number :: (Integral a) => a -> a -> a
+sum2Digit2Number x y
+    |x > 9 && x <100 && y > 9 && y <100 = (div x 10 + mod x 10) + (div y 10 + mod y 10)
+    |otherwise = error "Algún número no tiene 2 dígitos"
+
 
     --ej14 
 sum3Digits:: Int->Int
