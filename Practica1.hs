@@ -1,3 +1,4 @@
+import Data.Data (mkIntegralConstr)
 
 --ej1
 average3Numbers :: (Floating a) =>a -> a -> a -> a
@@ -135,3 +136,9 @@ distance (x1 , y1) (x2 , y2) = sqrt (x'*x' + y'*y')
  where
     x' = x1 - x2
     y' = y1 - y2
+
+
+--ej7
+    multripleta :: (Integral a) => [(a,a,a)] -> [a]
+    multripleta []  =[]
+    multripleta xs = [x*y*z | (x,y,z) <- xs]
